@@ -8,3 +8,4 @@ python-dotenv>=1
 yfinance>=0.2.40
 numpy>=1.26
 PyJWT>=2.8
+psycopg2-binary>=2.9
