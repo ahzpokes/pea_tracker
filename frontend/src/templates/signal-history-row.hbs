@@ -1,0 +1,22 @@
+<tr class="border-b border-border hover:bg-surface-muted transition">
+  <td class="py-3 pr-4">{{signal_date}}</td>
+  <td class="py-3 pr-4">
+    {{#if selected_instrument_id}}
+      {{selected_instrument_name}}
+    {{else}}
+      <span class="text-text-muted">Cash</span>
+    {{/if}}
+  </td>
+  <td class="py-3 pr-4">
+    <span class="badge 
+      {{#if (eq signal_type "CASH")}}badge-negative{{/if}}
+      {{#if (eq signal_type "ROTATE_TO_LEADER")}}badge-teal{{/if}}
+      {{#if (eq signal_type "HOLD_LEADER")}}badge-positive{{/if}}">
+      {{signal_type}}
+    </span>
+  </td>
+  <td class="py-3 pr-4">{{leader_score_pct}}</td>
+  <td class="py-3 pr-4">{{score_gap_pct}}</td>
+  <td class="py-3 pr-4">{{leader_sma200}}</td>
+  <td class="py-3 pr-4">{{threshold_used_pct}}</td>
+</tr>

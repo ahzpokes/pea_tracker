@@ -1,0 +1,15 @@
+# Backend
+backend/.env
+backend/data/
+backend/uploads/
+backend/__pycache__/
+*.pyc
+*.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Divers
+.DS_Store

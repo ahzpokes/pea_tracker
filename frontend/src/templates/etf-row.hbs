@@ -1,0 +1,31 @@
+<tr class="border-b border-border hover:bg-surface-muted transition">
+  <td class="py-3 pr-4 font-medium">{{name}}</td>
+  <td class="py-3 pr-4 text-text-muted">{{isin}}</td>
+  <td class="py-3 pr-4 text-text-muted">{{yahoo_symbol}}</td>
+  <td class="py-3 pr-4">{{currency}}</td>
+  <td class="py-3 pr-4">
+    {{#if is_benchmark}}
+      <span class="badge badge-teal">Benchmark</span>
+    {{else}}
+      <span class="badge badge-muted">ETF</span>
+    {{/if}}
+  </td>
+  <td class="py-3 pr-4">
+    {{#if is_active}}
+      <span class="badge badge-positive">Actif</span>
+    {{else}}
+      <span class="badge badge-negative">Inactif</span>
+    {{/if}}
+  </td>
+  <td class="py-3 pr-4 text-right whitespace-nowrap">
+    <button class="btn btn-sm test-btn" data-id="{{id}}" data-action="test" title="Tester ticker">
+      <i data-lucide="search" class="w-4 h-4"></i>
+    </button>
+    <button class="btn btn-sm edit-btn" data-id="{{id}}" data-action="edit" title="Modifier">
+      <i data-lucide="pencil" class="w-4 h-4"></i>
+    </button>
+    <button class="btn btn-sm delete-btn ml-2" data-id="{{id}}" data-action="delete" title="Supprimer">
+      <i data-lucide="trash-2" class="w-4 h-4"></i>
+    </button>
+  </td>
+</tr>

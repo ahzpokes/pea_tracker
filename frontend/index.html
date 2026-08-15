@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PEA Dual Momentum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-bg text-text">
+    <div id="app" class="min-h-screen flex">
+      <!-- Sidebar -->
+      <aside class="w-64 shrink-0 bg-surface border-r border-border hidden md:flex flex-col">
+        <div class="h-16 flex items-center gap-3 px-4 border-b border-border">
+          <!-- Logo SVG original -->
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo">
+            <circle cx="18" cy="18" r="14" stroke="var(--teal)" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+            <path d="M4 23 L10 18 L18 22 L26 10 L32 14" stroke="var(--navy)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M26 10 L26 16 L32 16" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="font-semibold leading-tight">PEA<br />Dual Momentum</span>
+        </div>
+        <nav class="flex-1 p-3 space-y-1" aria-label="Navigation principale">
+          <a href="#/dashboard" data-route="/dashboard" class="nav-link">
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+            Tableau de bord
+          </a>
+          <a href="#/etfs" data-route="/etfs" class="nav-link">
+            <i data-lucide="folder-cog" class="w-5 h-5"></i>
+            ETF & Benchmarks
+          </a>
+          <a href="#/signals" data-route="/signals" class="nav-link">
+            <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+            Signaux
+          </a>
+          <a href="#/settings" data-route="/settings" class="nav-link">
+            <i data-lucide="settings" class="w-5 h-5"></i>
+            Paramètres
+          </a>
+        </nav>
+        <div class="p-3 border-t border-border space-y-2">
+          <button id="theme-toggle" class="btn w-full" type="button">
+            <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:inline"></i>
+            <span id="theme-label">Mode sombre</span>
+          </button>
+          <button id="logout-btn" class="btn w-full" type="button">
+            <i data-lucide="log-out" class="w-5 h-5"></i>
+            Déconnexion
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="flex-1 p-4 md:p-6 lg:p-8 overflow-x-hidden">
+        <div id="view-container"></div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #E8FFFD;
+  --surface: #FFFFFF;
+  --surface-muted: #F2FAF9;
+  --teal: #008080;
+  --teal-bright: #00AAAA;
+  --navy: #011D25;
+  --text: #011D25;
+  --text-muted: #557078;
+  --border: #CDE3E0;
+  --positive: #067647;
+  --negative: #B42318;
+  --warning: #B54708;
+}
+
+.dark {
+  --bg: #011D25;
+  --surface: #082B35;
+  --surface-muted: #0D3540;
+  --teal: #00AAAA;
+  --teal-bright: #4DDEDD;
+  --text: #E8FFFD;
+  --text-muted: #A8C7C8;
+  --border: #1C4B55;
+  --positive: #5FD49C;
+  --negative: #F58B8B;
+  --warning: #F5BD68;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-teal: var(--teal);
+  --color-teal-bright: var(--teal-bright);
+  --color-navy: var(--navy);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-warning: var(--warning);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-lg shadow-sm p-5;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-border bg-surface text-text text-sm font-medium transition
+           hover:bg-surface-muted focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2 focus:ring-offset-surface
+           disabled:opacity-50 disabled:cursor-not-allowed;
+    min-height: 44px;
+  }
+
+  .btn-primary {
+    @apply bg-teal text-white border-teal hover:bg-teal-bright hover:border-teal-bright;
+  }
+
+  .btn-danger {
+    @apply bg-negative/10 text-negative border-negative/30 hover:bg-negative/20;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs min-h-0;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 rounded-md border border-border bg-surface-muted text-text placeholder:text-text-muted
+           focus:outline-none focus:ring-2 focus:ring-teal focus:border-teal;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-text-muted mb-1;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .badge-teal {
+    @apply bg-teal/10 text-teal;
+  }
+
+  .badge-muted {
+    @apply bg-surface-muted text-text-muted;
+  }
+
+  .badge-positive {
+    @apply bg-positive/10 text-positive;
+  }
+
+  .badge-negative {
+    @apply bg-negative/10 text-negative;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-text-muted
+           hover:bg-surface-muted hover:text-text focus:outline-none focus:ring-2 focus:ring-teal;
+  }
+
+  .nav-link.active {
+    @apply bg-surface-muted text-text;
+  }
+
+  .table-base {
+    @apply w-full text-sm;
+  }
+
+  .table-base th {
+    @apply py-2 pr-4 text-left font-medium text-text-muted border-b border-border;
+  }
+
+  .table-base td {
+    @apply py-3 pr-4 border-b border-border;
+  }
+}
